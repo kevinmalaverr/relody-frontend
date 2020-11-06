@@ -1,0 +1,29 @@
+.Button {
+    font-size: 1.1rem;
+    background-color: var(--c-primary);
+    color: var(--c-white);
+    padding: .6em 2em;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: var(--shadow-outline);
+        outline: none;
+    }
+
+    &.big {
+        font-size: 1.2rem;
+    }
+
+    &.small {
+        font-size: 1rem;
+    }
+}
+
+.Button.fill {
+    border-radius: 2rem;
+    border: none;
+}
+
+.Buttom.outline {
+    border: 2px solid var(--c-primary);
+}

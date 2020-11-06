@@ -1,0 +1,19 @@
+:root {
+    --c-white: #FFF;
+    --c-black: #000;
+    --c-dark: #252531;
+    // --c-orange: #FF9F1C;
+    // --c-orange-light: #FFBF69;
+    // --c-cyan: #2EC4B6;
+    // --c-cyan-light: #CBF3F0;
+    --c-sun: #f1c40f;
+    --c-orange: #f39c12;
+
+
+    --c-background: var(--c-white);
+    --c-primary: var(--c-orange);
+    --c-secondary: var(--c-cyan);
+
+
+    --shadow-outline: 0 0 0 2px white, 0 0 0 4px var(--c-primary);
+}
