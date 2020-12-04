@@ -1,0 +1,72 @@
+.AccountHeader-profile {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+
+    img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        margin-right: .6rem;
+    }
+
+    span {
+        font-size: .9rem;
+    }
+}
+
+.AccountHeader-modal {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-top: 2rem;
+    width: 100vw;
+    height: 80vh;
+    background-color: var(--c-background);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px 0 #00000022;
+
+    ul {
+        display: block;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+    }
+
+    li {
+        width: 100%;
+        display: block;
+    }
+
+    img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
+
+//_____________ media queries ________________
+
+@media (min-width:425px) {
+    .AccountHeader-container {
+        position: relative;
+    }
+
+    .AccountHeader-modal {
+        width: 300px;
+        height: auto;
+        text-align: center;
+    }
+
+}
+
+@media (min-width:768px) {}
+
+@media (min-width:992px) {}

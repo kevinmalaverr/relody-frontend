@@ -1,7 +1,16 @@
 // navigation bar
 
-.Navbar {}
+.Navbar {
+    color: var(--c-text);
+}
 
 .Navbar.Navbar--header {
-    // position: absolute;
+    display: none;
+}
+
+//______________ media quieries _____________
+@media (min-width:425px) {
+    .Navbar.Navbar--header {
+        display: block;
+    }
 }

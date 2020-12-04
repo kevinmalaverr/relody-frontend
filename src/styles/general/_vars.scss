@@ -1,19 +1,31 @@
 :root {
     --c-white: #FFF;
+    --c-cloud: #f2f2f2;
     --c-black: #000;
     --c-dark: #252531;
-    // --c-orange: #FF9F1C;
-    // --c-orange-light: #FFBF69;
-    // --c-cyan: #2EC4B6;
-    // --c-cyan-light: #CBF3F0;
+    --c-dark-2: #313141;
     --c-sun: #f1c40f;
     --c-orange: #f39c12;
+    --c-blue: #3498db;
+    --c-grey: #414042;
+    --c-blue-dark: #2c3e50;
+    --c-green-sea: #16a085;
+    --c-turquoise: #1abc9c;
+    --shadow-outline: 0 0 0 2px #fff, 0 0 0 4px #000;
+}
 
-
+.theme-light {
     --c-background: var(--c-white);
-    --c-primary: var(--c-orange);
+    --c-background-2: var(--c-cloud);
+    --c-primary: var(--c-green-sea);
     --c-secondary: var(--c-cyan);
+    --c-text: var(--c-dark);
+}
 
-
-    --shadow-outline: 0 0 0 2px white, 0 0 0 4px var(--c-primary);
+.theme-dark {
+    --c-background: var(--c-dark);
+    --c-background-2: var(--c-dark-2);
+    --c-primary: var(--c-green-sea);
+    --c-secondary: var(--c-cyan);
+    --c-text: var(--c-white);
 }

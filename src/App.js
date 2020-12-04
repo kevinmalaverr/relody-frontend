@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles/App.scss'
-import { Header } from './components/Header'
+import { loadTheme, changeTheme } from './utils/themeSelector'
+import { RouterComponent } from './routes'
 
 export const App = () => {
+  useEffect(() => {
+    loadTheme()
+    return () => { }
+  }, [])
+
   return (
-    <Header />
+    <>
+      <button onClick={changeTheme}>cambiar</button>
+      <RouterComponent />
+    </>
   )
 }

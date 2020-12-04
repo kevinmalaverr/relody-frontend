@@ -1,13 +1,31 @@
-@import './general/vars', './general/fonts', './general/buttons';
+@import './general/vars', './general/fonts', './general/buttons', "./general/links", "./general/position";
 
 html {
     font-size: 14px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--c-background);
     font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: var(--c-text);
+}
 
+button {
+    color: var(--c-text);
+}
+
+.v-line {
+    width: 1px;
+    height: 100%;
+    background-color: var(--c-text);
+    opacity: .5;
+    margin: 0 2rem;
 }
 
 

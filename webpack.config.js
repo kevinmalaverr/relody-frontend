@@ -29,12 +29,23 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
-          loader: MiniCSSExtractPlugin.loader
+          loader: MiniCSSExtractPlugin.loader,
+          options: {
+            publicPath: ''
+          }
         }, {
           loader: 'css-loader'
         }, {
           loader: 'sass-loader'
         }]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: { loader: 'file-loader' }
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: { loader: 'file-loader' }
       }
     ]
   }

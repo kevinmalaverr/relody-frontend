@@ -1,5 +1,28 @@
 .Header {
+    background-color: var(--c-background);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    top: 0px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    margin: auto;
+    align-items: center;
+    padding: 1rem;
+    max-width: 600px;
+    position: sticky;
+}
+
+
+//_____________ media queries ________________
+@media (min-width:768px) {
+    .Header {
+        padding: 1.4rem 1rem;
+        max-width: 1000px;
+    }
+}
+
+@media (min-width:992px) {
+    .Header {
+        margin: 1rem auto;
+        max-width: 1200px;
+    }
 }

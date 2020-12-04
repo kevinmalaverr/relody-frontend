@@ -1,5 +1,8 @@
 
 {
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
   "editor.formatOnSave": true,
   "[javascript]": {
       "editor.formatOnSave": false
@@ -17,3 +20,4 @@
   "eslint.format.enable": true,
   "prettier.eslintIntegration": true,
 }
+
