@@ -6,11 +6,13 @@ export const Layout = ({ children, title, descrition, header = true, footer = tr
   return (
     <>
       <Helmet>
-        {title ? <title>{title}</title> : null}
+        {title ? <title>{title} | Relody</title> : null}
         {descrition ? <meta name='description' content={descrition} /> : null}
       </Helmet>
       {header ? <Header /> : null}
-      {children}
+      <div className='container'>
+        {children}
+      </div>
       {footer ? <p>footer</p> : null}
     </>
   )

@@ -5,3 +5,29 @@
 .mr-1 {
     margin-right: 2rem;
 }
+
+
+.container {
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+}
+
+
+@media (min-width:768px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
