@@ -24,18 +24,18 @@ export const AccountHeader = () => {
           <p>{user.name}</p>
           <ul>
             <li>
-              <Link class='Link' to='/profile'>Ver perfil</Link>
+              <Link className='Link' to='/profile'>Ver perfil</Link>
             </li>
             <li>
-              <Link class='Link' to='sign-out'>Cerrar sesion</Link>
+              <Link className='Link' to='sign-out'>Cerrar sesion</Link>
             </li>
           </ul>
         </div>
-      </div>
+        </div>
       : <div>
         <Link to={routes.login} className='Link'>Iniciar sesion</Link>
         <Link to={routes.register} className='Link fill'>Registrarse</Link>
-      </div>}
+        </div>}
     </>
   )
 }
