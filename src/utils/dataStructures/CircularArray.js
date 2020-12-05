@@ -1,5 +1,5 @@
 class CircularArray {
-  constructor (size, array, head) {
+  constructor ({ size, array, head } = {}) {
     this.array = array || []
     this.head = head || 0
     this.size = size || 5

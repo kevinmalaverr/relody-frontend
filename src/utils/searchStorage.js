@@ -1,15 +1,22 @@
-import Stack from '../utils/dataStructures/Stack'
+import CircularArray from '../utils/dataStructures/CircularArray'
 
-export const addToSearchStorage = () => {
-  const stack = new Stack(5)
-  stack.push(50)
-  console.log(stack)
-  console.log('jhollaa')
-  window.localStorage.setItem('searches', JSON.stringify(stack))
+class SearchStorage {
+  constructor () {
+    const json = JSON.parse(window.localStorage.getItem('searches'))
+    this.storage = new CircularArray(json)
+  }
+
+  getStorage () {
+    return this.storage.getAll(true)
+  }
+
+  addItem (item) {
+    this.storage.add(item)
+    window.localStorage.setItem('searches', JSON.stringify(this.storage))
+  }
 }
 
-export const getSearchStorage = () => {
-  // const obj = JSON.parse(window.localStorage.getItem('searches'))
-  // const stack = new Stack().fromJson(obj)
-  // console.log(stack)
-}
+const searchStorage = new SearchStorage()
+Object.freeze(searchStorage)
+
+export default searchStorage

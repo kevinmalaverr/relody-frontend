@@ -1,24 +1,23 @@
 import React, { useState } from 'react'
 import '../styles/components/SearchBar.scss'
+import { redirectTo } from '@reach/router'
 import { useInputValue } from '../hooks/useInputValue'
 import { useOutsideClick } from '../hooks/useOutsideClick'
 import { getFocusText } from '../utils/getFocusText'
-import { addToSearchStorage, getSearchStorage } from '../utils/searchStorage'
+import searchStorage from '../utils/searchStorage'
 import songs from '../mocks/songs'
 
-const lastestSearch = ['ultimas', 'busquedas', 'xd']
+const lastestSearch = searchStorage.getStorage()
 
 export const SearchBar = () => {
   const [search, setSearch] = useInputValue('')
   const [focused, setFocused] = useState(false)
   const ref = useOutsideClick(() => setFocused(false))
 
-  getSearchStorage()
-
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
-    addToSearchStorage()
+    searchStorage.addItem(search)
+    // TODO: redirect page
   }
 
   const regex = new RegExp(`^.*${search}.*$`)
@@ -32,7 +31,7 @@ export const SearchBar = () => {
       {(focused && matchedSongs.length > 0)
         ? <div className='SearchBar-desplegable'>
           {matchedSongs.map((song, i) => <a className='SearchBar-item' href={`song/${song}`} key={i}>{getFocusText(song, search, 'bold')}</a>)}
-          </div>
+        </div>
         : null}
     </div>
   )
