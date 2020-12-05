@@ -1,3 +1,7 @@
+.AccountHeader-container {
+    // z-index: 200;
+}
+
 .AccountHeader-profile {
     display: flex;
     align-items: center;
@@ -27,6 +31,8 @@
     border-radius: 1rem;
     padding: 1rem;
     box-shadow: 0 2px 8px 0 #00000022;
+    // z-index: 200;
+    text-align: center;
 
     ul {
         display: block;
@@ -62,9 +68,7 @@
     .AccountHeader-modal {
         width: 300px;
         height: auto;
-        text-align: center;
     }
-
 }
 
 @media (min-width:768px) {}

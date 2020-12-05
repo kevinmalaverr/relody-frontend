@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../styles/components/AccountHeader.scss'
+import { useOutsideClick } from '../hooks/useOutsideClick'
 import { Link } from '@reach/router'
 import { routes } from '../routes'
 
@@ -10,12 +11,13 @@ const user = {
 }
 
 export const AccountHeader = () => {
-  const [isShow, show] = useState(false)
+  const [isShow, setShow] = useState(false)
+  const ref = useOutsideClick(() => setShow(false))
 
   return (
     <>{user
-      ? <div className='AccountHeader-container'>
-        <button className='AccountHeader-profile' onClick={() => show(!isShow)}>
+      ? <div ref={ref} className='AccountHeader-container'>
+        <button className='AccountHeader-profile' onClick={() => setShow(!isShow)}>
           <img src={user.photo} alt='perfil' />
           <span>{user.points} pts</span>
         </button>
