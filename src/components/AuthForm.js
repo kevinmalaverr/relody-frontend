@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/components/AuthForm.scss'
 import { useInputValue } from '../hooks/useInputValue'
 import { validateEmail } from '../utils/validateInputs'
-import { Link } from '@reach/router'
+import { Link } from 'react-router-dom'
 import { routes } from '../routes'
 
 export const AuthForm = ({ login }) => {
@@ -20,6 +20,9 @@ export const AuthForm = ({ login }) => {
         <input type='password' id='password' placeholder='Contraseña' value={password} onChange={setPassword} />
         <button className='Button fill'>Ingresar</button>
       </form>
+      <div className='hola'>
+        <div className='w' />
+      </div>
       <Link to={routes.register}>Registrarse</Link>
     </section>
   )

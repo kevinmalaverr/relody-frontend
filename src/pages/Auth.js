@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthForm } from '../components/AuthForm'
-import { useLocation } from '@reach/router'
+import { useLocation } from 'react-router-dom'
 import { routes } from '../routes'
 
 const Auth = () => {

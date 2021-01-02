@@ -2,7 +2,8 @@ import CircularArray from '../utils/dataStructures/CircularArray'
 
 class SearchStorage {
   constructor () {
-    const json = JSON.parse(window.localStorage.getItem('searches'))
+    const json = JSON.parse(window.localStorage.getItem('searches')) || {}
+    console.log(json)
     this.storage = new CircularArray(json)
   }
 

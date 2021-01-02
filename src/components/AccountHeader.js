@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/components/AccountHeader.scss'
 import { useOutsideClick } from '../hooks/useOutsideClick'
-import { Link } from '@reach/router'
+import { Link } from 'react-router-dom'
 import { routes } from '../routes'
 
 const user = {
@@ -33,11 +33,11 @@ export const AccountHeader = () => {
             </li>
           </ul>
         </div>
-        </div>
+      </div>
       : <div>
         <Link to={routes.login} className='Link'>Iniciar sesion</Link>
         <Link to={routes.register} className='Link fill'>Registrarse</Link>
-        </div>}
+      </div>}
     </>
   )
 }

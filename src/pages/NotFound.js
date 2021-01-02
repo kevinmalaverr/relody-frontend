@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/components/NotFound.scss'
 import image from '../assets/images/image_404.svg'
-import { Link } from '@reach/router'
+import { Link } from 'react-router-dom'
 
 const NotFound = () => {
   return (

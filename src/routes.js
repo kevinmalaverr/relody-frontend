@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { Router } from '@reach/router'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import { Loader } from './components/Loader'
 
@@ -19,12 +19,14 @@ const Songs = React.lazy(() => import('./pages/Songs'))
 
 export const RouterComponent = () => (
   <Suspense fallback={<Loader />}>
-    <Router>
-      <NotFound default />
-      <Home path={routes.home} />
-      <Songs path={routes.songs} />
-      <Auth path={routes.login} />
-      <Auth path={routes.register} />
-    </Router>
+    <BrowserRouter>
+      <Switch>
+        <Route exact component={Home} path={routes.home} />
+        <Route exact component={Songs} path={routes.songs} />
+        <Route exact component={Auth} path={routes.login} />
+        <Route exact component={Auth} path={routes.register} />
+        <Route path='*' component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   </Suspense>
 )
