@@ -3,7 +3,7 @@ import '../styles/components/Footer.css'
 
 export const Footer = () => {
   return (
-    <footer className='Footer'>
+    <footer className='footer'>
       created in latam
     </footer>
   )

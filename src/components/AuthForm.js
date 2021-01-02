@@ -10,8 +10,8 @@ export const AuthForm = ({ login }) => {
   const [password, setPassword] = useInputValue('')
 
   return (
-    <section className='AuthForm-container'>
-      <form className='AuthForm' action=''>
+    <section className='auth-form-container'>
+      <form className='auth-form' action=''>
         <h2>{login ? 'Ingresar' : 'Registrarse'}</h2>
         <hr />
         <label htmlFor='email'>Email</label>

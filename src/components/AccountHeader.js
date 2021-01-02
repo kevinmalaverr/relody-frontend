@@ -16,12 +16,12 @@ export const AccountHeader = () => {
 
   return (
     <>{user
-      ? <div ref={ref} className='AccountHeader-container'>
-        <button className='AccountHeader-profile' onClick={() => setShow(!isShow)}>
+      ? <div ref={ref} className='account-header__container'>
+        <button className='account-header__profile' onClick={() => setShow(!isShow)}>
           <img src={user.photo} alt='perfil' />
           <span>{user.points} pts</span>
         </button>
-        <div className={`AccountHeader-modal ${isShow ? 'show' : ''}`}>
+        <div className={`account-header__modal ${isShow ? 'account-header__modal--show' : ''}`}>
           <img src={user.photo} alt='perfil' />
           <p>{user.name}</p>
           <ul>

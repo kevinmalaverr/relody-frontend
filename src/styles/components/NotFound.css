@@ -1,4 +1,4 @@
-.NotFound-container {
+.not-found__container {
     width: 100%;
     max-width: 600px;
     text-align: center;
@@ -10,7 +10,7 @@
     
 }
 
-.NotFound-container img {
+.not-found__container img {
     width: 100%;
     max-width: 400px;
     margin-bottom: 1rem;

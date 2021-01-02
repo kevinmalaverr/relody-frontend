@@ -1,18 +1,16 @@
-.SearchBar-container {
+.search-bar__container {
     position: relative;
 }
 
-.SearchBar {
+.search-bar {
     width: 100%;
     border-radius: 1rem;
     border: 1px solid var(--c-text);
     height: 2.1rem;
-    display: flex;
-
-    
+    display: flex; 
 }
 
-.SearchBar input {
+.search-bar input {
     border: none;
     width: 100%;
     background: none;
@@ -20,16 +18,16 @@
     padding: 0 1rem;
 }
 
-.SearchBar input::placeholder{
+.search-bar input::placeholder{
         color: var(--c-grey)
     }
 
-    .SearchBar input:focus {
+    .search-bar input:focus {
         outline: none;
     }
 
 
-    .SearchBar button {
+    .search-bar button {
     width: 1.7rem;
     height: 1.7rem;
     background-color: var(--c-primary);
@@ -40,12 +38,12 @@
     color: #fff;
 }
 
-.SearchBar:focus-within {
+.search-bar:focus-within {
     border: 1px solid var(--c-primary);
 }
 
 
-.SearchBar-desplegable {
+.search-bar-desplegable {
     box-shadow: 0 0 8px 0 #00000033;
     padding: .5rem 0;
     background-color: var(--c-background);
@@ -57,7 +55,7 @@
     flex-direction: column;
 }
 
-.SearchBar-item {
+.search-bar-item {
     width: 100%;
     padding: .5rem;
     text-decoration: none;
@@ -66,7 +64,7 @@
 
 }
 
-.SearchBar-item :focus,
-.SearchBar-item :hover {
+.search-bar-item :focus,
+.search-bar-item :hover {
     background-color: var(--c-background-2);
 }

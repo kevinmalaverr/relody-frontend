@@ -22,15 +22,15 @@ export const SearchBar = () => {
   const regex = new RegExp(`^.*${search}.*$`)
   const matchedSongs = search ? songs.filter(song => song.match(regex)) : lastestSearch
   return (
-    <div ref={ref} className='SearchBar-container'>
-      <form className='SearchBar' onSubmit={handleSubmit}>
+    <div ref={ref} className='search-bar__container'>
+      <form className='search-bar' onSubmit={handleSubmit}>
         <input placeholder='buscar cancion' type='text' onChange={setSearch} onFocus={(e) => setFocused(true)} />
         <button><i className='Icon_search_outline' /></button>
       </form>
       {(focused && matchedSongs.length > 0)
-        ? <div className='SearchBar-desplegable'>
-          {matchedSongs.map((song, i) => <a className='SearchBar-item' href={`song/${song}`} key={i}>{getFocusText(song, search, 'bold')}</a>)}
-        </div>
+        ? <div className='search-bar-desplegable'>
+          {matchedSongs.map((song, i) => <a className='search-bar-item' href={`song/${song}`} key={i}>{getFocusText(song, search, 'bold')}</a>)}
+          </div>
         : null}
     </div>
   )

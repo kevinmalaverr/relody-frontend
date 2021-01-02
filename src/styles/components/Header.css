@@ -1,4 +1,4 @@
-.Header {
+.header {
     background-color: var(--c-background);
     width: 100%;
     top: 0px;
@@ -15,14 +15,14 @@
 
 /* _____________ media queries ________________ */
 @media (min-width:768px) {
-    .Header {
+    .header {
         padding: 1.4rem 1rem;
         max-width: 1000px;
     }
 }
 
 @media (min-width:992px) {
-    .Header {
+    .header {
         margin: 1rem auto;
         max-width: 1200px;
     }

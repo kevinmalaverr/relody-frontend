@@ -7,7 +7,7 @@ import { routes } from '../routes'
 
 export const Header = () => {
   return (
-    <header className='Header'>
+    <header className='header'>
       <Link to={routes.home}>
         RELODY
       </Link>

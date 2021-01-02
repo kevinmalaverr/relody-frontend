@@ -5,7 +5,7 @@ import { routes } from '../routes'
 
 export const Navbar = ({ type }) => {
   return (
-    <nav className={`Navbar Navbar--${type}`}>
+    <nav className={`navbar navbar__${type}`}>
       <ul>
         <Link to={routes.songs} className='Link'>canciones</Link>
         <Link to={routes.lessons} className='Link'>lecciones</Link>

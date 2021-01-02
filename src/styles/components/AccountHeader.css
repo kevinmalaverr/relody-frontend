@@ -1,23 +1,23 @@
 
-.AccountHeader-profile {
+.account-header__profile {
     display: flex;
     align-items: center;
     border: none;
     background: none;
 }
 
-.AccountHeader-profile img {
+.account-header__profile img {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     margin-right: .6rem;
 }
 
-.AccountHeader-profile span {
+.account-header__profile span {
     font-size: .9rem;
 }
 
-.AccountHeader-modal {
+.account-header__modal {
     display: none;
     position: absolute;
     right: 0;
@@ -33,25 +33,25 @@
 
 }
 
-.AccountHeader-modal ul {
+.account-header__modal ul {
     display: block;
     flex-direction: column;
     padding: 0;
     width: 100%;
 }
 
-.AccountHeader-modal li {
+.account-header__modal li {
     width: 100%;
     display: block;
 }
 
-.AccountHeader-modal img {
+.account-header__modal img {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
 }
 
-.AccountHeader-modal .show {
+.account-header__modal--show {
     display: block;
 }
 
@@ -59,11 +59,11 @@
 /* _____________ media queries ________________ */
 
 @media (min-width:425px) {
-    .AccountHeader-container {
+    .account-header__container {
         position: relative;
     }
 
-    .AccountHeader-modal {
+    .account-header__modal {
         width: 300px;
         height: auto;
     }

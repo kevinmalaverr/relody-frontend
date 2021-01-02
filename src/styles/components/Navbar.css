@@ -1,16 +1,16 @@
 /* navigation bar */
 
-.Navbar {
+.navbar {
     color: var(--c-text);
 }
 
-.Navbar.Navbar--header {
+.navbar__header {
     display: none;
 }
 
 /* ______________ media quieries _____________ */
 @media (min-width:425px) {
-    .Navbar.Navbar--header {
+    .navbar__header {
         display: block;
     }
 }

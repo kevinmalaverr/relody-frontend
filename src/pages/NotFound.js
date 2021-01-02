@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const NotFound = () => {
   return (
-    <div className='NotFound-container'>
-      <img src={image} alt='' className='NotFound-image' />
+    <div className='not-found__container'>
+      <img src={image} alt='' className='not-found' />
       <h1>No encontrmamos lo que buscas</h1>
       <Link to='/' className='Link fill'>ir al inicio</Link>
     </div>
