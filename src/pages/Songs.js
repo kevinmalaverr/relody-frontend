@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Layout } from '../components/Layout'
 import { SearchBar } from '../components/SearchBar'
+import { TutorialCard } from '../components/TutorialCard'
 
 const Songs = () => {
   // useEffect(() => {
@@ -17,7 +18,9 @@ const Songs = () => {
         <SearchBar />
       </section>
       <main>
-        <p>hila</p>
+        {[0, 1, 2, 3, 4].map(el => (
+          <TutorialCard title={el} />
+        ))}
       </main>
     </Layout>
   )

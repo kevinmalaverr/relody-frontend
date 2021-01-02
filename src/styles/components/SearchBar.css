@@ -1,0 +1,72 @@
+.SearchBar-container {
+    position: relative;
+}
+
+.SearchBar {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--c-text);
+    height: 2.1rem;
+    display: flex;
+
+    
+}
+
+.SearchBar input {
+    border: none;
+    width: 100%;
+    background: none;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.SearchBar input::placeholder{
+        color: var(--c-grey)
+    }
+
+    .SearchBar input:focus {
+        outline: none;
+    }
+
+
+    .SearchBar button {
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: var(--c-primary);
+    border-radius: 50%;
+    border: none;
+    margin-top: .15rem;
+    margin-right: .1rem;
+    color: #fff;
+}
+
+.SearchBar:focus-within {
+    border: 1px solid var(--c-primary);
+}
+
+
+.SearchBar-desplegable {
+    box-shadow: 0 0 8px 0 #00000033;
+    padding: .5rem 0;
+    background-color: var(--c-background);
+    border-radius: .6rem;
+    position: absolute;
+    width: 100%;
+    margin-top: .4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.SearchBar-item {
+    width: 100%;
+    padding: .5rem;
+    text-decoration: none;
+    color: var(--c-text);
+
+
+}
+
+.SearchBar-item :focus,
+.SearchBar-item :hover {
+    background-color: var(--c-background-2);
+}

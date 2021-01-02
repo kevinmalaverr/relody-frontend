@@ -1,4 +1,4 @@
-// navigation bar
+/* navigation bar */
 
 .Navbar {
     color: var(--c-text);
@@ -8,7 +8,7 @@
     display: none;
 }
 
-//______________ media quieries _____________
+/* ______________ media quieries _____________ */
 @media (min-width:425px) {
     .Navbar.Navbar--header {
         display: block;

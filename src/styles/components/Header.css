@@ -13,7 +13,7 @@
 }
 
 
-//_____________ media queries ________________
+/* _____________ media queries ________________ */
 @media (min-width:768px) {
     .Header {
         padding: 1.4rem 1rem;

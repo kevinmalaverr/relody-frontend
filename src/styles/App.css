@@ -1,4 +1,9 @@
-@import './general/vars', './general/fonts', './general/buttons', "./general/links", "./general/position";
+@import './general/vars';
+@import './general/fonts';
+@import './general/buttons';
+@import "./general/links";
+@import "./general/position";
+@import "./general/vars.css";
 
 html {
     font-size: 14px;

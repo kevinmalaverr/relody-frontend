@@ -1,23 +1,20 @@
-.AccountHeader-container {
-    // z-index: 200;
-}
 
 .AccountHeader-profile {
     display: flex;
     align-items: center;
     border: none;
     background: none;
+}
 
-    img {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        margin-right: .6rem;
-    }
+.AccountHeader-profile img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: .6rem;
+}
 
-    span {
-        font-size: .9rem;
-    }
+.AccountHeader-profile span {
+    font-size: .9rem;
 }
 
 .AccountHeader-modal {
@@ -31,34 +28,35 @@
     border-radius: 1rem;
     padding: 1rem;
     box-shadow: 0 2px 8px 0 #00000022;
-    // z-index: 200;
     text-align: center;
 
-    ul {
-        display: block;
-        flex-direction: column;
-        padding: 0;
-        width: 100%;
-    }
 
-    li {
-        width: 100%;
-        display: block;
-    }
+}
 
-    img {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-    }
+.AccountHeader-modal ul {
+    display: block;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+}
 
-    &.show {
-        display: block;
-    }
+.AccountHeader-modal li {
+    width: 100%;
+    display: block;
+}
+
+.AccountHeader-modal img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.AccountHeader-modal .show {
+    display: block;
 }
 
 
-//_____________ media queries ________________
+/* _____________ media queries ________________ */
 
 @media (min-width:425px) {
     .AccountHeader-container {

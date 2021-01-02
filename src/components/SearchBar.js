@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../styles/components/SearchBar.scss'
+import '../styles/components/SearchBar.css'
 import { useInputValue } from '../hooks/useInputValue'
 import { useOutsideClick } from '../hooks/useOutsideClick'
 import { getFocusText } from '../utils/getFocusText'
@@ -30,7 +30,7 @@ export const SearchBar = () => {
       {(focused && matchedSongs.length > 0)
         ? <div className='SearchBar-desplegable'>
           {matchedSongs.map((song, i) => <a className='SearchBar-item' href={`song/${song}`} key={i}>{getFocusText(song, search, 'bold')}</a>)}
-          </div>
+        </div>
         : null}
     </div>
   )

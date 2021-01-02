@@ -4,7 +4,7 @@
     padding: .6em 1em;
     border-radius: 2em;
     color: var(--c-text);
-
+/* 
     &:hover {
         color: var(--c-turquoise);
     }
@@ -16,5 +16,5 @@
     &.fill {
         background-color: var(--c-primary);
         color: #fff;
-    }
+    } */
 }

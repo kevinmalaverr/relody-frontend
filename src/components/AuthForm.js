@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/components/AuthForm.scss'
+import '../styles/components/AuthForm.css'
 import { useInputValue } from '../hooks/useInputValue'
 import { validateEmail } from '../utils/validateInputs'
 import { Link } from 'react-router-dom'

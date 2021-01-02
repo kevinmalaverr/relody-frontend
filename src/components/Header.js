@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/components/Header.scss'
+import '../styles/components/Header.css'
 import { Navbar } from './Navbar'
 import { AccountHeader } from './AccountHeader'
 import { Link } from 'react-router-dom'

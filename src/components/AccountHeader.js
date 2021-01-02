@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../styles/components/AccountHeader.scss'
+import '../styles/components/AccountHeader.css'
 import { useOutsideClick } from '../hooks/useOutsideClick'
 import { Link } from 'react-router-dom'
 import { routes } from '../routes'
@@ -33,11 +33,11 @@ export const AccountHeader = () => {
             </li>
           </ul>
         </div>
-      </div>
+        </div>
       : <div>
         <Link to={routes.login} className='Link'>Iniciar sesion</Link>
         <Link to={routes.register} className='Link fill'>Registrarse</Link>
-      </div>}
+        </div>}
     </>
   )
 }

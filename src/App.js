@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './styles/App.scss'
+import './styles/App.css'
 import { loadTheme, changeTheme } from './utils/themeSelector'
 import { RouterComponent } from './routes'
 

@@ -10,6 +10,7 @@ module.exports = {
       template: 'src/index.html'
     }),
     new MiniCSSExtractPlugin()
+    // postcssImport
   ],
   module: {
     rules: [
@@ -27,7 +28,8 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
+        exclude: /node_modules/,
         use: [{
           loader: MiniCSSExtractPlugin.loader,
           options: {
@@ -35,9 +37,20 @@ module.exports = {
           }
         }, {
           loader: 'css-loader'
-        }, {
-          loader: 'sass-loader'
-        }]
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: [
+                [
+                  'postcss-import'
+                ]
+              ]
+            }
+          }
+        }
+        ]
       },
       {
         test: /\.(png|jpe?g|gif)$/i,

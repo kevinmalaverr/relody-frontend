@@ -1,7 +1,7 @@
-// buttons
+/* buttons */
 
 
-// ___________ General button __________________
+ /* ___________ General button __________________ */
 .Button {
     font-size: 1.1rem;
     background-color: var(--c-primary);
@@ -10,7 +10,7 @@
     cursor: pointer;
     border-radius: 2rem;
 
-    &:focus {
+    /* &:focus {
         box-shadow: var(--shadow-outline);
         outline: none;
     }
@@ -25,28 +25,28 @@
 
     &.small {
         font-size: 1rem;
-    }
+    } */
 }
 
 
-// ___________ fill button __________________
+/* ___________ fill button __________________ */
 .Button.fill {
     border: none;
 
-    &:hover {
+    /* &:hover {
         filter: brightness(90%);
-    }
+    } */
 }
 
 
-// ___________ outline button ________________
+/* // ___________ outline button ________________ */
 .Button.outline {
     border: 2px solid var(--c-primary);
     background-color: transparent;
     color: var(--c-primary);
 
-    &:hover {
+    /* &:hover {
         color: #fff;
         background-color: var(--c-primary);
-    }
+    } */
 }
