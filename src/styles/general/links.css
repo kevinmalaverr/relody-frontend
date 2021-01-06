@@ -18,3 +18,8 @@
         color: #fff;
     } */
 }
+
+.a-nostyle {
+    text-decoration: none;
+    color: inherit;
+}

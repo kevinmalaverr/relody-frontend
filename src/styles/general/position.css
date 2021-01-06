@@ -1,11 +1,10 @@
 .m-1 {
-    margin: .4rem;
+    margin: 0.4rem;
 }
 
 .mr-1 {
-    margin-right: 2rem;
+    margin-right: 0.4rem;
 }
-
 
 .container {
     width: 100%;
@@ -14,20 +13,19 @@
     min-height: 100vh;
 }
 
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .container {
         max-width: 600px;
     }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .container {
         max-width: 800px;
     }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
     .container {
         max-width: 1000px;
     }
