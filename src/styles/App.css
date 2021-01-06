@@ -1,6 +1,6 @@
-@import './general/vars';
-@import './general/fonts';
-@import './general/buttons';
+@import "./general/vars";
+@import "./general/fonts";
+@import "./general/buttons";
 @import "./general/links";
 @import "./general/position";
 @import "./general/vars.css";
@@ -14,42 +14,42 @@ html {
 }
 
 body {
-    background-color: var(--c-background);
-    font-family: 'Lato', sans-serif;
+    background-color: var(--color-background);
+    font-family: "Lato", sans-serif;
     padding: 0;
     margin: 0;
-    color: var(--c-text);
+    color: var(--color-text);
 }
 
 button {
-    color: var(--c-text);
+    color: var(--color-text);
 }
 
 .v-line {
     width: 1px;
     height: 100%;
-    background-color: var(--c-text);
-    opacity: .5;
+    background-color: var(--color-text);
+    opacity: 0.5;
     margin: 0 2rem;
 }
 
 .bold {
-    color: var(--c-primary);
+    color: var(--color-primary);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
     html {
         font-size: 15px;
     }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     html {
         font-size: 16px;
     }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
     html {
         font-size: 17px;
     }

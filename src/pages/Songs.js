@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Layout } from '../components/Layout'
 import { SearchBar } from '../components/SearchBar'
-import { TutorialCard } from '../components/TutorialCard'
+import TutorialList from '../components/TutorialList'
 
 const Songs = () => {
   // useEffect(() => {
@@ -18,9 +18,7 @@ const Songs = () => {
         <SearchBar />
       </section>
       <main>
-        {[0, 1, 2, 3, 4].map(el => (
-          <TutorialCard title={el} />
-        ))}
+        <TutorialList />
       </main>
     </Layout>
   )

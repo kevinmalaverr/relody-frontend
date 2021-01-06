@@ -1,5 +1,5 @@
 .header {
-    background-color: var(--c-background);
+    background-color: var(--color-background);
     width: 100%;
     top: 0px;
     display: grid;
@@ -12,16 +12,15 @@
     z-index: 10;
 }
 
-
 /* _____________ media queries ________________ */
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .header {
         padding: 1.4rem 1rem;
         max-width: 1000px;
     }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .header {
         margin: 1rem auto;
         max-width: 1200px;

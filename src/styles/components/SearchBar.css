@@ -5,9 +5,9 @@
 .search-bar {
     width: 100%;
     border-radius: 1rem;
-    border: 1px solid var(--c-text);
+    border: 1px solid var(--color-text);
     height: 2.1rem;
-    display: flex; 
+    display: flex;
 }
 
 .search-bar input {
@@ -18,53 +18,49 @@
     padding: 0 1rem;
 }
 
-.search-bar input::placeholder{
-        color: var(--c-grey)
-    }
+.search-bar input::placeholder {
+    color: var(--color-grey);
+}
 
-    .search-bar input:focus {
-        outline: none;
-    }
+.search-bar input:focus {
+    outline: none;
+}
 
-
-    .search-bar button {
+.search-bar button {
     width: 1.7rem;
     height: 1.7rem;
-    background-color: var(--c-primary);
+    background-color: var(--color-primary);
     border-radius: 50%;
     border: none;
-    margin-top: .15rem;
-    margin-right: .1rem;
+    margin-top: 0.15rem;
+    margin-right: 0.1rem;
     color: #fff;
 }
 
 .search-bar:focus-within {
-    border: 1px solid var(--c-primary);
+    border: 1px solid var(--color-primary);
 }
-
 
 .search-bar-desplegable {
     box-shadow: 0 0 8px 0 #00000033;
-    padding: .5rem 0;
-    background-color: var(--c-background);
-    border-radius: .6rem;
+    padding: 0.5rem 0;
+    background-color: var(--color-background);
+    border-radius: 0.6rem;
     position: absolute;
     width: 100%;
-    margin-top: .4rem;
+    margin-top: 0.4rem;
     display: flex;
     flex-direction: column;
 }
 
 .search-bar-item {
     width: 100%;
-    padding: .5rem;
+    padding: 0.5rem;
     text-decoration: none;
-    color: var(--c-text);
-
-
+    color: var(--color-text);
 }
 
 .search-bar-item :focus,
 .search-bar-item :hover {
-    background-color: var(--c-background-2);
+    background-color: var(--color-background-2);
 }

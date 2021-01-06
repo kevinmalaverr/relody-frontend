@@ -1,20 +1,20 @@
 .Link {
     text-decoration: none;
     font-size: 1.1rem;
-    padding: .6em 1em;
+    padding: 0.6em 1em;
     border-radius: 2em;
-    color: var(--c-text);
-/* 
+    color: var(--color-text);
+    /* 
     &:hover {
-        color: var(--c-turquoise);
+        color: var(--color-turquoise);
     }
 
     &[aria-current] {
-        color: var(--c-primary);
+        color: var(--color-primary);
     }
 
     &.fill {
-        background-color: var(--c-primary);
+        background-color: var(--color-primary);
         color: #fff;
     } */
 }

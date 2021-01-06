@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { routes } from '../routes'
 
 const user = {
-  name: 'gatomon',
-  photo: 'https://lh3.googleusercontent.com/ogw/ADGmqu_b6BOzJY53OJ9W2V6CmpkV_4gcSGQ-H5lV7MFU=s32-c-mo',
-  points: 451
+  // name: 'gatomon',
+  // photo: 'https://lh3.googleusercontent.com/ogw/ADGmqu_b6BOzJY53OJ9W2V6CmpkV_4gcSGQ-H5lV7MFU=s32-c-mo',
+  // points: 451
 }
 
 export const AccountHeader = () => {
@@ -33,11 +33,11 @@ export const AccountHeader = () => {
             </li>
           </ul>
         </div>
-        </div>
+      </div>
       : <div>
         <Link to={routes.login} className='Link'>Iniciar sesion</Link>
         <Link to={routes.register} className='Link fill'>Registrarse</Link>
-        </div>}
+      </div>}
     </>
   )
 }

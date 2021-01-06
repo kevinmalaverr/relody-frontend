@@ -1,7 +1,7 @@
 /* navigation bar */
 
 .navbar {
-    color: var(--c-text);
+    color: var(--color-text);
 }
 
 .navbar__header {
@@ -9,7 +9,7 @@
 }
 
 /* ______________ media quieries _____________ */
-@media (min-width:425px) {
+@media (min-width: 425px) {
     .navbar__header {
         display: block;
     }
