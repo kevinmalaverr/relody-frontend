@@ -19,7 +19,7 @@ export class CircularQueue {
    * @param {*} value data to enqueue.
    */
   enqueue (value) {
-    if ((this.tail + 1) % this.size) {
+    if ((this.tail + 1) % this.size === this.head) {
 
     } else if (this.head === -1) {
       this.head = 0
@@ -41,6 +41,10 @@ export class CircularQueue {
       const temp = this.queue[this.head]
       this.head = -1
       this.tail = -1
+      return temp
+    } else {
+      const temp = this.queue[this.head]
+      this.head = (this.head + 1) % this.size
       return temp
     }
   }
@@ -67,12 +71,16 @@ export class SearchQueue extends CircularQueue {
    */
   getLastsElements (length) {
     const arr = []
-    let index = this.tail
+    let index = this.tail + 1
     let i = 0
+    let item
     while (i < length) {
       if (index <= 0) index = this.size - 1
       index--
       i++
+
+      item = this.queue[index]
+      if (typeof item === 'undefined') return arr
       arr.push(this.queue[index])
     }
     return arr

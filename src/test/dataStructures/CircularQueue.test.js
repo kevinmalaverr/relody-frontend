@@ -2,18 +2,15 @@ import { SearchQueue } from '../../utils/dataStructures/CircularQueue'
 
 describe('Search Queue', () => {
   const search = new SearchQueue()
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 5; i++) {
     search.enqueue(i)
   }
 
-  search.dequeue()
-
-  test('fun', () => {
-    expect(search.peek()).toBe(1)
+  test('peek', () => {
+    expect(search.peek()).toBe(0)
   })
 
-  test('fun', () => {
-    console.log(search)
-    expect(search.getLastsElements(10)).toBe(19)
+  test('getLastElements', () => {
+    expect(search.getLastsElements(10)).toStrictEqual([4, 3, 2, 1, 0])
   })
 })
