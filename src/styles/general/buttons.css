@@ -30,7 +30,7 @@
     border: none;
 }
 
-&:hover {
+.button--fill:hover {
     filter: brightness(90%);
 }
 

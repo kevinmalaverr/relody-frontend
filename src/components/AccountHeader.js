@@ -3,6 +3,7 @@ import '../styles/components/AccountHeader.css'
 import { useOutsideClick } from '../hooks/useOutsideClick'
 import { Link } from 'react-router-dom'
 import { routes } from '../routes'
+import defaultProfilePhoto from '../assets/images/default_profile_photo.png'
 
 const user = {
   // name: 'gatomon',
@@ -18,7 +19,7 @@ export const AccountHeader = () => {
     <>{user
       ? <div ref={ref} className='account-header__container'>
         <button className='account-header__profile' onClick={() => setShow(!isShow)}>
-          <img src={user.photo} alt='perfil' />
+          <img src={user.photo || defaultProfilePhoto} alt='perfil' />
           <span>{user.points} pts</span>
         </button>
         <div className={`account-header__modal ${isShow ? 'account-header__modal--show' : ''}`}>
@@ -33,11 +34,11 @@ export const AccountHeader = () => {
             </li>
           </ul>
         </div>
-      </div>
+        </div>
       : <div>
         <Link to={routes.login} className='Link'>Iniciar sesion</Link>
         <Link to={routes.register} className='Link fill'>Registrarse</Link>
-      </div>}
+        </div>}
     </>
   )
 }

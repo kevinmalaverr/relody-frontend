@@ -60,7 +60,7 @@
     color: var(--color-text);
 }
 
-.search-bar-item :focus,
-.search-bar-item :hover {
+.search-bar-item:focus,
+.search-bar-item:hover {
     background-color: var(--color-background-2);
 }

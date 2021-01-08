@@ -1,10 +1,10 @@
-import CircularArray from '../utils/dataStructures/CircularArray'
+import { SearchQueue } from '../utils/dataStructures/CircularQueue'
 
 class SearchStorage {
   constructor () {
     const json = JSON.parse(window.localStorage.getItem('searches')) || {}
     console.log(json)
-    this.storage = new CircularArray(json)
+    this.storage = new SearchQueue().ge
   }
 
   getStorage () {

@@ -7,9 +7,13 @@
     --color-dark-2: #253046;
     --color-grey-dark: #565e6b;
     --color-grey-light: #a1a1b9;
+
     --shadow-outline: 0 0 0 2px #fff, 0 0 0 4px #000;
-    --color-shadow-light: #ffffff33;
+    --color-shadow-light: transparent;
     --color-shadow-dark: #00000033;
+
+    --color-card-light: transparent;
+    --color-card-dark: #bd9fff17;
 }
 
 .theme-light {
@@ -20,6 +24,7 @@
     --color-text: var(--color-dark);
     --color-grey: var(--color-grey-dark);
     --color-shadow: var(--color-shadow-dark);
+    --color-card: var(--color-card-light);
 }
 
 .theme-dark {
@@ -30,4 +35,5 @@
     --color-text: var(--color-white);
     --color-grey: var(--color-grey-light);
     --color-shadow: var(--color-shadow-light);
+    --color-card: var(--color-card-dark);
 }
