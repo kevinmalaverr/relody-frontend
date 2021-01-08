@@ -85,4 +85,14 @@ export class SearchQueue extends CircularQueue {
     }
     return arr
   }
+
+  /**
+   * @param {*} item item to append, if it is in the queue will be moved to tail
+   */
+  enqueue(item){
+    const index = this.queue.indexOf(item)
+    if(index === -1){
+      super.enqueue(item)
+    }
+  }
 }

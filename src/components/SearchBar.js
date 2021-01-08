@@ -20,7 +20,8 @@ export const SearchBar = () => {
   }
 
   const regex = new RegExp(`^.*${search}.*$`)
-  const matchedSongs = search ? songs.filter(song => song.match(regex)) : lastestSearch
+  const matchedSongs = search ? [...lastestSearch, ...songs].filter(song => song.match(regex)) : lastestSearch
+
   return (
     <div ref={ref} className='search-bar__container'>
       <form className='search-bar' onSubmit={handleSubmit}>

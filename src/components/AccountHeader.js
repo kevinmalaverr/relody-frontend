@@ -23,7 +23,7 @@ export const AccountHeader = () => {
           <span>{user.points} pts</span>
         </button>
         <div className={`account-header__modal ${isShow ? 'account-header__modal--show' : ''}`}>
-          <img src={user.photo} alt='perfil' />
+          <img src={user.photo || defaultProfilePhoto} alt='perfil' />
           <p>{user.name}</p>
           <ul>
             <li>

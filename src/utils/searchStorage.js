@@ -2,17 +2,17 @@ import { SearchQueue } from '../utils/dataStructures/CircularQueue'
 
 class SearchStorage {
   constructor () {
-    const json = JSON.parse(window.localStorage.getItem('searches')) || {}
+    const json = JSON.parse(window.localStorage.getItem('searches')) || null
     console.log(json)
-    this.storage = new SearchQueue().ge
+    this.storage = new SearchQueue(json)
   }
 
   getStorage () {
-    return this.storage.getAll(true)
+    return this.storage.getLastsElements(10)
   }
 
   addItem (item) {
-    this.storage.add(item)
+    this.storage.enqueue(item)
     window.localStorage.setItem('searches', JSON.stringify(this.storage))
   }
 }
