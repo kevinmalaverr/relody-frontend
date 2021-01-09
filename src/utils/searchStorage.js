@@ -1,9 +1,13 @@
 import { SearchQueue } from '../utils/dataStructures/CircularQueue'
 
+function isWindow () {
+  if (typeof window === 'undefined') return false
+  else return true
+}
+
 class SearchStorage {
   constructor () {
-    const json = JSON.parse(window.localStorage.getItem('searches')) || null
-    console.log(json)
+    const json = isWindow() ? JSON.parse(window.localStorage.getItem('searches')) : null
     this.storage = new SearchQueue(json)
   }
 
