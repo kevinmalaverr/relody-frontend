@@ -8,7 +8,7 @@ import serverRoutes from '../src/serverRoutes'
 import reducer from '../src/redux/reducer'
 import initialState from '../initialState.json'
 
-const setResponse = (html) => {
+const setResponse = (html, preloadedState) => {
   return (/* html */`
     <!DOCTYPE html>
     <html lang="en">
@@ -20,6 +20,9 @@ const setResponse = (html) => {
       </head>
       <body>
         <div id="app">${html}</div>
+        <script>
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+        </script>
         <script src="assets/app.js" type="text/javascript"></script>
       </body>
     </html>
@@ -33,6 +36,7 @@ const setResponse = (html) => {
  */
 export const renderApp = (req, res) => {
   const store = createStore(reducer, initialState)
+  const preloadedState = store.getState()
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
@@ -40,5 +44,5 @@ export const renderApp = (req, res) => {
       </StaticRouter>
     </Provider>
   )
-  res.send(setResponse(html))
+  res.send(setResponse(html, preloadedState))
 }
