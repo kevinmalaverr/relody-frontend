@@ -14,6 +14,11 @@ const statsFile = `${__dirname}/public/loadable-stats.json`
 // We create an extractor from the statsFile
 const extractor = new ChunkExtractor({ statsFile })
 // Wrap your application using "collectChunks"
+const linkTags = extractor.getLinkTags() // or chunkExtractor.getLinkElements();
+
+const counter = 0
+
+console.log(linkTags)
 
 const setResponse = (html, preloadedState) => {
   return (/* html */`
@@ -28,7 +33,7 @@ const setResponse = (html, preloadedState) => {
       <body>
         <div id="app">${html}</div>
         <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+          <!-- window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')} -->
         </script>
         <script src="assets/app.js" type="text/javascript"></script>
       </body>
@@ -40,8 +45,14 @@ const setResponse = (html, preloadedState) => {
  * express middleware
  * @param {*} req
  * @param {*} res
+ * @param {*} next
  */
-export const renderApp = (req, res) => {
+export const renderApp = (req, res, next) => {
+  // test if the url is a file
+  if (new RegExp(/\..*$/).test(req.url)) {
+    return next()
+  }
+
   const store = createStore(reducer, initialState)
   const preloadedState = store.getState()
   const html = renderToString(

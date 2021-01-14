@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const LoadablePlugin = require('@loadable/webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const config = require('./config')
 
@@ -11,6 +12,8 @@ const entry = ['./src/index.js']
 if (isDev) {
   entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true')
 }
+
+console.log(config.ENV)
 
 module.exports = {
   entry,
@@ -22,6 +25,10 @@ module.exports = {
   },
   plugins: [
     isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
+    isDev ? () => {} : new CompressionPlugin({
+      test: /\.(js|css)$/,
+      filename: '[path][base].gz'
+    }),
     new MiniCSSExtractPlugin({
       filename: 'assets/app.css'
     }),

@@ -8,17 +8,13 @@ import NotFound from './pages/NotFound'
 import Home from './pages/Home'
 import Auth from './pages/Auth'
 import Tutorial from './pages/Tutorial'
+import Songs from './pages/Songs'
 
-const Songs = loadable(() => import('./pages/Songs'))
+// const Songs = loadable(() => import('./pages/Songs'), { fallback: <p>loading...</p> })
 
 export const App = () => {
-  useEffect(() => {
-    loadTheme()
-    return () => { }
-  }, [])
-
   return (
-    <>
+    <div>
       <button onClick={changeTheme}>cambiar</button>
       <BrowserRouter>
         <Switch>
@@ -30,6 +26,6 @@ export const App = () => {
           <Route path='*' component={NotFound} />
         </Switch>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
