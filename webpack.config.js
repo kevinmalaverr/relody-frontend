@@ -1,22 +1,32 @@
 const path = require('path')
 const webpack = require('webpack')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const config = require('./config')
+
+const isDev = (config.ENV === 'development')
+const entry = ['./src/index.js']
+
+if (isDev) {
+  entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true')
+}
 
 module.exports = {
-  entry: ['./src/index.js', 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true'],
-  mode: 'development',
+  entry,
+  mode: config.ENV,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'server/public'),
     filename: 'assets/app.js',
     publicPath: '/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
     new MiniCSSExtractPlugin({
       filename: 'assets/app.css'
     }),
-    new Dotenv()
+    new Dotenv(),
+    new LoadablePlugin()
   ],
   module: {
     rules: [

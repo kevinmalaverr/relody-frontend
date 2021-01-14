@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "standard",
-    "build": "webpack",
-    "dev2": "webpack serve --mode development --env development --history-api-fallback",
+    "build": "ENV=production webpack-cli --config webpack.config.js",
     "dev": "ENV=development nodemon server/index.js"
   },
   "repository": {
@@ -22,6 +21,8 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/webpack-plugin": "^5.14.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.1",
     "dotenv-webpack": "^6.0.0",
@@ -45,9 +46,12 @@
   },
   "dependencies": {
     "@babel/register": "^7.12.10",
+    "@loadable/component": "^5.14.1",
+    "@loadable/server": "^5.14.0",
     "asset-require-hook": "^1.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.3.1",
     "history": "^5.0.0",
     "ignore-styles": "^5.0.1",
     "react": "^16.14.0",

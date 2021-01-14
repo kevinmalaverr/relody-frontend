@@ -1,7 +1,8 @@
 require('ignore-styles')
 
 require('@babel/register')({
-  presets: ['@babel/preset-env', '@babel/preset-react']
+  presets: ['@babel/preset-env', '@babel/preset-react'],
+  plugins: ['@loadable/babel-plugin']
 })
 
 require('asset-require-hook')({

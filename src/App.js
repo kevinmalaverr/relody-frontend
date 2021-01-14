@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 import './styles/App.css'
+import loadable from '@loadable/component'
 import { loadTheme, changeTheme } from './utils/themeSelector'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { routes } from './routes'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
 import Auth from './pages/Auth'
-import Songs from './pages/Songs'
 import Tutorial from './pages/Tutorial'
+
+const Songs = loadable(() => import('./pages/Songs'))
 
 export const App = () => {
   useEffect(() => {

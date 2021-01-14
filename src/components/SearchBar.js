@@ -31,7 +31,7 @@ export const SearchBar = () => {
       {(focused && matchedSongs.length > 0)
         ? <div className='search-bar-desplegable'>
           {matchedSongs.map((song, i) => <a className='search-bar-item' href={`song/${song}`} key={i}>{getFocusText(song, search, 'bold')}</a>)}
-          </div>
+        </div>
         : null}
     </div>
   )
