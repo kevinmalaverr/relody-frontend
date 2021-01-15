@@ -24,6 +24,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new LoadablePlugin({ writeToDisk: true }),
     isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
     isDev ? () => {} : new CompressionPlugin({
       test: /\.(js|css)$/,
@@ -32,8 +33,7 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: 'assets/app.css'
     }),
-    new Dotenv(),
-    new LoadablePlugin()
+    new Dotenv()
   ],
   module: {
     rules: [

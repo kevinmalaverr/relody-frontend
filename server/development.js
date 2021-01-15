@@ -10,7 +10,10 @@ export function developmentConfig (app) {
 
   const compiler = webpack(webpackConfig)
   const { publicPath } = webpackConfig.output
-  const serverConfig = { serverSideRender: true, publicPath }
+  const serverConfig = {
+    serverSideRender: true,
+    publicPath
+  }
 
   app.use(webpackDevMiddleware(compiler, serverConfig))
   app.use(webpackHotMiddleware(compiler))

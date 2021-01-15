@@ -1,3 +1,4 @@
+// babel utilities
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
@@ -14,7 +15,9 @@ const history = createBrowserHistory()
 const preloadedState = window.__PRELOADED_STATE__
 const store = getStore(preloadedState)
 
+// erase preloaded state from window and DOM
 delete window.__PRELOADED_STATE__
+document.getElementById('preloadedState').remove()
 
 loadableReady(() => {
   ReactDOM.hydrate(
