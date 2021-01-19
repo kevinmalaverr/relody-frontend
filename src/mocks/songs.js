@@ -1,6 +1,6 @@
 export default [
-  'habia una',
-  'vez en un',
-  'reino muy lejano',
-  'un Gato muy feo'
+  'lorem ipsum',
+  'dolor sit amet',
+  'consectetur adipisicing',
+  'aliquam ducimus'
 ]

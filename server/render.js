@@ -14,7 +14,7 @@ const setResponse = (html, preloadedState, extractor) => {
   const helmet = Helmet.renderStatic()
   return (/* html */`
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" class="theme-light">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

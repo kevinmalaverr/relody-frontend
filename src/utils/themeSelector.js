@@ -11,9 +11,9 @@ export const changeTheme = () => {
 }
 
 export const loadTheme = () => {
-  if (window.localStorage.getItem('theme') === 'light') {
-    document.documentElement.className = 'theme-light'
-  } else {
+  if (window.localStorage.getItem('theme') === 'dark') {
     document.documentElement.className = 'theme-dark'
+  } else {
+    document.documentElement.className = 'theme-light'
   }
 }

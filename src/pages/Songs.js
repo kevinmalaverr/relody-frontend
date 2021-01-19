@@ -13,7 +13,7 @@ const Songs = () => {
   // }, [])
 
   return (
-    <Layout title='Buscar tutorailes de camciones'>
+    <Layout>
       <section className='hero'>
         <SearchBar />
       </section>

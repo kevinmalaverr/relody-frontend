@@ -1,5 +1,4 @@
 .header {
-    background-color: var(--color-background);
     width: 100%;
     top: 0px;
     display: grid;
@@ -8,7 +7,6 @@
     align-items: center;
     padding: 1rem;
     max-width: 600px;
-    position: sticky;
     z-index: 10;
 }
 
@@ -22,7 +20,7 @@
 
 @media (min-width: 992px) {
     .header {
-        margin: 1rem auto;
+        margin: auto;
         max-width: 1200px;
     }
 }

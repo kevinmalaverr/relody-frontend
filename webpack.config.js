@@ -25,12 +25,12 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new LoadablePlugin(),
+    new LoadablePlugin({ writeToDisk: true }),
     isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
-    isDev ? () => {} : new CompressionPlugin({
-      test: /\.(js|css)$/,
-      filename: '[path][base].gz'
-    }),
+    // isDev ? () => {} : new CompressionPlugin({
+    //   test: /\.(js|css)$/,
+    //   filename: '[path][base].gz'
+    // }),
     new MiniCSSExtractPlugin({
       filename: 'assets/app.css'
     }),

@@ -52,9 +52,3 @@ button {
         font-size: 16px;
     }
 }
-
-@media (min-width: 1200px) {
-    html {
-        font-size: 17px;
-    }
-}

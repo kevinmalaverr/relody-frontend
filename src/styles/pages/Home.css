@@ -1,5 +1,33 @@
-.hero-image {
+.hero {
+    position: relative;
+    top: 0;
+    height: 80vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    color: #fff;
+}
+
+.hero__background {
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: -1;
+    object-fit: cover;
+    height: 100%;
+}
+
+.hero__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    height: 100%;
+}
+
+.hero__title {
+    padding: 1rem;
+    text-align: center;
+    max-width: 600px;
 }
