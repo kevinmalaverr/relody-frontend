@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <header className='header'>
       <Link to={routes.home}>
-        RELODYycfg
+        RELODY
       </Link>
       <div />
       <Navbar type='header' />

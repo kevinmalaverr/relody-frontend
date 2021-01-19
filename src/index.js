@@ -20,7 +20,7 @@ delete window.__PRELOADED_STATE__
 document.getElementById('preloadedState').remove()
 
 loadableReady(() => {
-  ReactDOM.hydrate(
+  ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
         <App />

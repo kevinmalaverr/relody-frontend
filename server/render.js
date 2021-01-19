@@ -8,15 +8,17 @@ import serverRoutes from '../src/serverRoutes'
 import reducer from '../src/redux/reducer'
 import initialState from '../initialState.json'
 import { ChunkExtractor } from '@loadable/server'
+import { Helmet } from 'react-helmet'
 
 const setResponse = (html, preloadedState, extractor) => {
+  const helmet = Helmet.renderStatic()
   return (/* html */`
     <!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        ${helmet.title.toString()}
         ${extractor.getStyleTags()}
         ${extractor.getLinkTags()}
       </head>

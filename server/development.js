@@ -8,13 +8,15 @@ export function developmentConfig (app) {
   const webpackDevMiddleware = require('webpack-dev-middleware')
   const webpackHotMiddleware = require('webpack-hot-middleware')
 
-  const compiler = webpack(webpackConfig)
-  const { publicPath } = webpackConfig.output
-  const serverConfig = {
-    serverSideRender: true,
-    publicPath
-  }
+  console.error(webpackConfig.output.publicPath)
 
-  app.use(webpackDevMiddleware(compiler, serverConfig))
-  app.use(webpackHotMiddleware(compiler))
+  const compiler = webpack(webpackConfig)
+  app.use(webpackDevMiddleware(compiler, {
+    serverSideRender: true,
+    publicPath: webpackConfig.output.publicPath,
+    stats: false
+  }))
+  app.use(webpackHotMiddleware(compiler, {
+    path: '/__what'
+  }))
 }

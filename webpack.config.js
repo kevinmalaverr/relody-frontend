@@ -10,7 +10,8 @@ const isDev = (config.ENV === 'development')
 const entry = ['./src/index.js']
 
 if (isDev) {
-  entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true')
+  console.log('dev')
+  entry.push('webpack-hot-middleware/client?path=/__what&timeout=2000&overlay=false&reload=true')
 }
 
 console.log(config.ENV)
@@ -24,7 +25,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new LoadablePlugin({ writeToDisk: true }),
+    new LoadablePlugin(),
     isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
     isDev ? () => {} : new CompressionPlugin({
       test: /\.(js|css)$/,
@@ -85,5 +86,8 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 }

@@ -11,7 +11,7 @@ export const Layout = ({ children, title, descrition, header = true, footer = tr
         {descrition ? <meta name='description' content={descrition} /> : null}
       </Helmet>
       {header ? <Header /> : null}
-      <div className='container'>
+      <div className='ff'>
         {children}
       </div>
       {footer ? <Footer /> : null}
