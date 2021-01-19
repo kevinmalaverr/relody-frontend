@@ -14,7 +14,7 @@ export function developmentConfig (app) {
   app.use(webpackDevMiddleware(compiler, {
     serverSideRender: true,
     publicPath: webpackConfig.output.publicPath,
-    stats: false
+    stats: true
   }))
   app.use(webpackHotMiddleware(compiler, {
     path: '/__what'

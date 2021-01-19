@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
  * @param {*} defaultValue
  * @returns {*} fetched data
  */
-export const useFetchData = (apiUrl, defaultValue, timeout = 100) => {
+export const useFetchData = (apiUrl, defaultValue, timeout = 10000) => {
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState(defaultValue)

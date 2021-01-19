@@ -1,16 +1,13 @@
 @import "./general/vars";
-@import "./general/fonts";
 @import "./general/buttons";
 @import "./general/links";
 @import "./general/position";
-@import "./general/vars.css";
+@import "./general/mediaQueries.css";
+
+@custom-media --tablet-viewport (min-width: 768px);
 
 html {
     font-size: 14px;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 body {
@@ -37,11 +34,7 @@ button {
     color: var(--color-primary);
 }
 
-.img-fluid {
-    width: 100%;
-}
-
-@media (min-width: 768px) {
+@media (--tablet-viewport) {
     html {
         font-size: 15px;
     }

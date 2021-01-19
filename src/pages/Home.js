@@ -13,7 +13,7 @@ import imgLandingPhone from '../assets/images/landing_phone.jpg'
 const Home = () => {
   return (
     <Layout header={false}>
-      <div className='hero'>
+      <section className='hero'>
         <Header />
         <div className='hero__content'>
           <h1 className='hero__title'>Hero messagge</h1>
@@ -24,7 +24,10 @@ const Home = () => {
           tablet={imgLandingTablet}
           desktop={imgLandingDesktop}
         />
-      </div>
+      </section>
+      <section className='container'>
+        te
+      </section>
     </Layout>
   )
 }

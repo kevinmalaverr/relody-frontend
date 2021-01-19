@@ -3,8 +3,10 @@ const webpack = require('webpack')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const LoadablePlugin = require('@loadable/webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const postcssCustomMedia = require('postcss-custom-media')
 const Dotenv = require('dotenv-webpack')
 const config = require('./config')
+const postcssPresetEnv = require('postcss-preset-env')
 
 const isDev = (config.ENV === 'development')
 const entry = ['./src/index.js']
@@ -54,26 +56,26 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [{
-          loader: MiniCSSExtractPlugin.loader,
-          options: {
-            publicPath: ''
-          }
-        }, {
-          loader: 'css-loader'
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions: {
-              plugins: [
-                [
-                  'postcss-import'
+        use: [
+
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    'postcss-preset-env',
+                    {
+                    // Options
+                    }
+                  ]
                 ]
-              ]
+              }
             }
           }
-        }
         ]
       },
       {
