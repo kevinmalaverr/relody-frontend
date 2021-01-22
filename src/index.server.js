@@ -1,9 +1,5 @@
 import loadable from '@loadable/component'
 import NotFound from './pages/NotFound'
-// import Home from './pages/Home'
-// import Auth from './pages/Auth'
-// import Songs from './pages/Songs'
-// import Tutorial from './pages/Tutorial'
 import { routes } from './routes'
 
 const Home = loadable(() => import('./pages/Home'), { ssr: true })

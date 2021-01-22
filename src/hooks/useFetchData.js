@@ -18,7 +18,7 @@ export const useFetchData = (apiUrl, defaultValue, timeout = 10000) => {
       console.error('time exceded')
     }, timeout)
 
-    async function fg () {
+    async function fun () {
       try {
         const response = await fetch(apiUrl, { signal: controller.signal })
         clearTimeout(id)
@@ -27,11 +27,12 @@ export const useFetchData = (apiUrl, defaultValue, timeout = 10000) => {
         setData(data)
       } catch (error) {
         console.error(error)
+        clearTimeout(id)
         setError(true)
       }
     }
 
-    fg()
+    fun()
 
     return () => {
       controller.abort()

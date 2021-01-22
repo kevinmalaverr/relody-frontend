@@ -3,8 +3,8 @@ import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { renderRoutes } from 'react-router-config'
-import { StaticRouter, matchPath } from 'react-router-dom'
-import serverRoutes from '../src/serverRoutes'
+import { StaticRouter } from 'react-router-dom'
+import app from '../src/index.server'
 import reducer from '../src/redux/reducer'
 import initialState from '../initialState.json'
 import { ChunkExtractor } from '@loadable/server'
@@ -56,7 +56,7 @@ export const renderApp = (req, res, next) => {
     extractor.collectChunks(
       <Provider store={store}>
         <StaticRouter location={req.url} context={context}>
-          {renderRoutes(serverRoutes)}
+          {renderRoutes(app)}
         </StaticRouter>
       </Provider>
     )

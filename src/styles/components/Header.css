@@ -10,11 +10,23 @@
     z-index: 10;
 }
 
-/* _____________ media queries ________________ */
+.show-menu {
+    background-color: red;
+    display: block;
+}
+
+/* ______________ media quieries _____________ */
+@media (min-width: 425px) {
+}
+
 @media (min-width: 768px) {
     .header {
         padding: 1.4rem 1rem;
         max-width: 1000px;
+    }
+
+    .show-menu {
+        display: none;
     }
 }
 

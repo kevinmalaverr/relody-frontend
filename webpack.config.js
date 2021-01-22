@@ -3,16 +3,13 @@ const webpack = require('webpack')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const LoadablePlugin = require('@loadable/webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const postcssCustomMedia = require('postcss-custom-media')
 const Dotenv = require('dotenv-webpack')
 const config = require('./config')
-const postcssPresetEnv = require('postcss-preset-env')
 
 const isDev = (config.ENV === 'development')
 const entry = ['./src/index.js']
 
 if (isDev) {
-  console.log('dev')
   entry.push('webpack-hot-middleware/client?path=/__what&timeout=2000&overlay=false&reload=true')
 }
 
@@ -47,7 +44,12 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/preset-env',
+              ['@babel/preset-env',
+                {
+                  targets: {
+                    chrome: '73'
+                  }
+                }],
               '@babel/preset-react'
             ]
           }
@@ -57,21 +59,14 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-
-          {
-            loader: 'css-loader'
-          },
+          MiniCSSExtractPlugin.loader,
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
-                  [
-                    'postcss-preset-env',
-                    {
-                    // Options
-                    }
-                  ]
+                  'postcss-preset-env'
                 ]
               }
             }
@@ -88,8 +83,5 @@ module.exports = {
         }
       }
     ]
-  },
-  devServer: {
-    historyApiFallback: true
   }
 }

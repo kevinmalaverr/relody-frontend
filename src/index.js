@@ -1,6 +1,6 @@
 // babel utilities
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
+// import 'core-js/stable'
+// import 'regenerator-runtime/runtime'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -20,21 +20,10 @@ const store = getStore(preloadedState)
 delete window.__PRELOADED_STATE__
 document.getElementById('preloadedState').remove()
 
-function KeyPress (e) {
-  var evtobj = window.event ? event : e
-  if (evtobj.key === 'y' && evtobj.ctrlKey) changeTheme()
-}
-
-const dev = true
-
-if (dev) {
-  document.onkeydown = KeyPress
-}
-
-loadTheme()
+const renderFunction = process.env.ssr === 'true' ? ReactDOM.hydrate : ReactDOM.render
 
 loadableReady(() => {
-  ReactDOM.render(
+  renderFunction(
     <Provider store={store}>
       <Router history={history}>
         <App />

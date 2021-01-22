@@ -4,13 +4,37 @@
     color: var(--color-text);
 }
 
-.navbar__header {
+.navbar--header {
     display: none;
+}
+
+.navbar--lateral {
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    right: -90%;
+    top: 0;
+    z-index: 100;
+    background-color: red;
+    transition: 0.3s;
+}
+
+.navbar--lateral.active {
+    right: 0;
+}
+
+.show-menu {
+    background-color: red;
+    display: block;
 }
 
 /* ______________ media quieries _____________ */
 @media (min-width: 425px) {
-    .navbar__header {
+    .navbar--header {
         display: block;
+    }
+
+    .show-menu {
+        display: none;
     }
 }
