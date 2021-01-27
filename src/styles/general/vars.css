@@ -8,7 +8,7 @@
     --color-grey-dark: #565e6b;
     --color-grey-light: #a1a1b9;
 
-    --shadow-outline: 0 0 0 2px #fff, 0 0 0 4px #000;
+    --shadow-outline: 0 0 0 2px var(--color-text);
     --color-shadow-light: transparent;
     --color-shadow-dark: #00000033;
 

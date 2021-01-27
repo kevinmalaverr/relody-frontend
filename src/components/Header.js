@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { routes } from '../routes'
 import loadable from '@loadable/component'
 import { useOutsideClick } from '../hooks/useOutsideClick'
+import IHamburger from './icons/hamburger'
 
 export const Header = () => {
   const [showLateralMenu, setShowLateralMenu] = useState(false)
@@ -14,13 +15,12 @@ export const Header = () => {
   return (
     <header className='header'>
       <Link to={routes.home}>
-        RELODY
+        Music Star
       </Link>
       <div />
       <Navbar type='header' />
-      <div className='v-line' />
       <AccountHeader />
-      <button className='show-menu' onClick={() => setShowLateralMenu(!showLateralMenu)}>x</button>
+      <button className='show-menu' onClick={() => setShowLateralMenu(!showLateralMenu)}><IHamburger /></button>
       <Navbar ref={lateralMenuRef} type='lateral' close={() => setShowLateralMenu(false)} className={showLateralMenu ? 'active' : ''} />
     </header>
   )

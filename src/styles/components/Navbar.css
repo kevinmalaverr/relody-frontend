@@ -10,31 +10,36 @@
 
 .navbar--lateral {
     position: fixed;
-    width: 80%;
+    width: 400px;
+    max-width: 80%;
     height: 100%;
-    right: -90%;
+    right: -410px;
     top: 0;
     z-index: 100;
-    background-color: red;
+    background-color: var(--color-background);
     transition: 0.3s;
+}
+
+.navbar--lateral ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
 }
 
 .navbar--lateral.active {
     right: 0;
 }
 
-.show-menu {
-    background-color: red;
-    display: block;
+.close-menu {
+    font-size: 2rem;
+    color: var(--color-text);
+    background-color: transparent;
 }
 
 /* ______________ media quieries _____________ */
-@media (min-width: 425px) {
+@media (min-width: 768px) {
     .navbar--header {
         display: block;
-    }
-
-    .show-menu {
-        display: none;
     }
 }

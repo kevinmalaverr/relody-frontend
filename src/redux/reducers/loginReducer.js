@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+const loginReducer = (state = {}, action) => {
   switch (action.type) {
     case 'SET_FAVORITE':
       return state
@@ -7,4 +7,4 @@ const reducer = (state, action) => {
   }
 }
 
-export default reducer
+export default loginReducer

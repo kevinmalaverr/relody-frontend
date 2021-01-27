@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import reducer from './reducer'
+import reducer from './reducers'
 
 /**
  * receive an object with initial state and returns the store

@@ -10,7 +10,6 @@ import getStore from './redux/store'
 import { Router } from 'react-router'
 import { createBrowserHistory } from 'history'
 import { loadableReady } from '@loadable/component'
-import { changeTheme, loadTheme } from './utils/themeSelector'
 
 const history = createBrowserHistory()
 const preloadedState = window.__PRELOADED_STATE__
@@ -20,7 +19,16 @@ const store = getStore(preloadedState)
 delete window.__PRELOADED_STATE__
 document.getElementById('preloadedState').remove()
 
-const renderFunction = process.env.ssr === 'true' ? ReactDOM.hydrate : ReactDOM.render
+const renderFunction = process.env.SSR === 'true' ? ReactDOM.hydrate : ReactDOM.render
+
+if (process.env.ENV === 'development') {
+  import('./utils/development')
+    .then(module => {
+      console.log('development')
+      module.default()
+    })
+    .catch(console.error)
+}
 
 loadableReady(() => {
   renderFunction(

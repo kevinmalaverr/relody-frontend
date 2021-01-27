@@ -6,5 +6,6 @@ export const routes = {
   song: '/song/:songId',
   lessons: '/lessons',
   radio: '/radio',
+  profile: '/profile',
   tutorial: '/tutorial/:tutorialId'
 }

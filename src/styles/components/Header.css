@@ -2,17 +2,21 @@
     width: 100%;
     top: 0px;
     display: grid;
-    grid-template-columns: auto 1fr auto auto auto;
+    grid-template-columns: auto 1fr auto auto;
     margin: auto;
     align-items: center;
+    gap: 1rem;
     padding: 1rem;
-    max-width: 600px;
     z-index: 10;
 }
 
 .show-menu {
-    background-color: red;
     display: block;
+    font-size: 1.6rem;
+    padding: 0;
+    line-height: 0;
+    background: transparent;
+    stroke: var(--color-text);
 }
 
 /* ______________ media quieries _____________ */

@@ -6,10 +6,8 @@ import { useEffect, useState } from 'react'
  * @param {*} defaultValue
  * @returns {*} fetched data
  */
-export const useFetchData = (apiUrl, defaultValue, timeout = 10000) => {
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(true)
-  const [data, setData] = useState(defaultValue)
+export const useFetchData = ({ apiUrl, defaultValue, timeout = 10000 }) => {
+  const [status, setStatus] = useState({ data: defaultValue, error: false, loading: true })
 
   useEffect(() => {
     const controller = new AbortController()
@@ -18,26 +16,24 @@ export const useFetchData = (apiUrl, defaultValue, timeout = 10000) => {
       console.error('time exceded')
     }, timeout)
 
-    async function fun () {
+    async function f () {
       try {
         const response = await fetch(apiUrl, { signal: controller.signal })
         clearTimeout(id)
         const { data } = await response.json()
-        setLoading(false)
-        setData(data)
+        setStatus({ ...status, loading: false, data })
       } catch (error) {
         console.error(error)
         clearTimeout(id)
-        setError(true)
+        setStatus({ ...status, loading: false, error })
       }
     }
-
-    fun()
+    f()
 
     return () => {
       controller.abort()
     }
   }, [])
 
-  return [error, loading, data]
+  return status
 }
