@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { routes } from '../routes'
 import loadable from '@loadable/component'
 import { useOutsideClick } from '../hooks/useOutsideClick'
+import ILogo from './icons/logo'
 import IHamburger from './icons/hamburger'
 
 export const Header = () => {
@@ -15,7 +16,7 @@ export const Header = () => {
   return (
     <header className='header'>
       <Link to={routes.home}>
-        Music Star
+        <ILogo />
       </Link>
       <div />
       <Navbar type='header' />

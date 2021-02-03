@@ -1,0 +1,2 @@
+export const USER_FETCH = 'FETCH_USER'
+export const USER_FETCH_SUCCEEDED = 'USER_FETCH_SUCCEEDE'

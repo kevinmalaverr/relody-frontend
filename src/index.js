@@ -13,7 +13,12 @@ import { loadableReady } from '@loadable/component'
 
 const history = createBrowserHistory()
 const preloadedState = window.__PRELOADED_STATE__
-const store = getStore(preloadedState)
+console.log(preloadedState)
+const store = getStore({
+  header: {},
+  login: {},
+  tutorials: { loading: true }
+})
 
 // erase preloaded state from window and DOM
 delete window.__PRELOADED_STATE__

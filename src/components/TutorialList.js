@@ -1,14 +1,11 @@
 import React from 'react'
 import '../styles/components/TutorialList.css'
-import { connect } from 'react-redux'
 import { TutorialCard } from './TutorialCard'
 import { useFetchData } from '../hooks/useFetchData'
 import TutorialCardLoading from './TutorialCardLoading'
 
-const TutorialList = ({ arreglo }) => {
-  const { error, loading, data: tutorials } = useFetchData({ apiUrl: `${process.env.API_URL}/tutorials`, defaultValue: [] })
-  console.log(arreglo)
-
+const TutorialList = () => {
+  const { error, loading, data: tutorials } = useFetchData({ apiUrl: `${process.env.API_URL}/tutorials`, defaultValue: [], selector: state => state.tutorials, reducer: 'TUTORIALS_FETCH' })
   if (error) {
     return (
       <section>
@@ -36,8 +33,4 @@ const TutorialList = ({ arreglo }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  arreglo: state
-})
-
-export default connect(mapStateToProps, null)(TutorialList)
+export default TutorialList

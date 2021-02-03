@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 /**
  * fecth data from a url
@@ -6,14 +7,15 @@ import { useEffect, useState } from 'react'
  * @param {*} defaultValue
  * @returns {*} fetched data
  */
-export const useFetchData = ({ apiUrl, defaultValue, timeout = 10000 }) => {
-  const [status, setStatus] = useState({ data: defaultValue, error: false, loading: true })
+export const useFetchData = ({ apiUrl, defaultValue, selector, reducer, timeout = 10000 }) => {
+  const status = useSelector(selector)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const controller = new AbortController()
     const id = setTimeout(() => {
       controller.abort()
-      console.error('time exceded')
+      dispatch({ type: reducer, payload: { loading: false, error: true } })
     }, timeout)
 
     async function f () {
@@ -21,11 +23,11 @@ export const useFetchData = ({ apiUrl, defaultValue, timeout = 10000 }) => {
         const response = await fetch(apiUrl, { signal: controller.signal })
         clearTimeout(id)
         const { data } = await response.json()
-        setStatus({ ...status, loading: false, data })
+        dispatch({ type: reducer, payload: { loading: false, data } })
       } catch (error) {
         console.error(error)
         clearTimeout(id)
-        setStatus({ ...status, loading: false, error })
+        dispatch({ type: reducer, payload: { loading: false, error } })
       }
     }
     f()
